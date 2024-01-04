@@ -11,7 +11,7 @@ The model is trained in CNTK following the tutorial CNTK 103D: Convolutional Neu
 ### Run OVMS with the model inside
 Execute the following command from the [pipelines](../../) folder:
 ```
-docker run -d -u $(id -u):$(id -g) --rm -v ${PWD}/models:/model:Z -p 8000:8000 openvino/model_server:latest --model_name onnx_mnist --model_path /model/onnx-mnist --rest_port 8000
+podman run -d --rm -v ${PWD}/models:/model:Z -p 8000:8000 openvino/model_server:latest --model_name onnx_mnist --model_path /model/onnx-mnist --rest_port 8000
 ```
 
 Test call
